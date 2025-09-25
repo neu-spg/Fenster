@@ -5,18 +5,18 @@ public class Fenster
     private boolean kippbar;
     
     //constructor
-    public Fenster(String neuMaterial,int neuPreis,boolean neuKippbar)
+    public Fenster(String material,int preis,boolean kippbar)
     {
-        setMaterial(neuMaterial);
-        setPreis (neuPreis);
-        setKippbar (neuKippbar);
+        setMaterial(material);
+        setPreis (preis);
+        setKippbar (kippbar);
     }
     
     //Mischform constructor
-    public Fenster(int neuPreis)
+    public Fenster(int preis)
     {
         setMaterial("Alu");
-        setPreis (neuPreis);
+        setPreis (preis);
         setKippbar (true);
     }
     
@@ -28,6 +28,16 @@ public class Fenster
         setKippbar(true);
     }
     
+    //Fenster int
+    // Signatur BEREITS VORHANDEN!!!!, Reihenfolge auch wichtig!
+    /*
+    public Fenster(int neuAnz)
+    {
+        
+    }
+    */
+   
+    // getMaterial
     public String getMaterial()
     {
         return material;
@@ -43,25 +53,32 @@ public class Fenster
         return kippbar;
     }
     
-    public void setMaterial(String neuMaterial)
+    public void setMaterial(String material)
     {
-        material = neuMaterial;
+        //Die Eigenschaft material wird mit dem Wert des Parameters neuMaterial überschrieben
+        this.material = material;
     }
     
-    public void setPreis(int neuPreis)
+    public void setPreis(int preis)
     {
-        preis =  neuPreis;
+        this.preis =  preis;
     }
     
-    public void setKippbar(boolean neuKippbar)
+    public void setKippbar(boolean kippbar)
     {
-        kippbar = neuKippbar;
+        this.kippbar = kippbar;
     }
     
     public void printFenster()
     {
-        System.out.println(material + " Fenster: " + preis + " EUR - " + kippbar);
+        if (kippbar == true)
+        {
+            System.out.println(material + "Fenster: " + preis + " EUR - " + "KIPPBAR");
+        }
+        else
+        {
+            System.out.println(material + "Fenster: " + preis + " EUR - " + "nicht KIPPBAR");
+        }
     }
-
+    
 }
-
