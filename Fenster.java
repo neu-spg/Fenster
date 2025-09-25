@@ -69,6 +69,24 @@ public class Fenster
         this.kippbar = kippbar;
     }
     
+    public void testen()
+    {
+        //System.out.println(material.charAt(0));
+        //System.out.println(material.charAt(2));
+        System.out.println(material.indexOf(" "));
+    }
+    
+    //             012345
+    // material = "Alu 35"
+    public String getRohstoff()
+    {
+        int pos;
+        
+        pos = material.indexOf(" ");        //3
+        return material.substring(0, pos);  // 0 ... 3 => "Alu"
+        
+    }
+    
     public void printFenster()
     {
         if (kippbar == true)
